@@ -55,7 +55,7 @@ static std::vector<int> GetNPrimeAfterAnInteger(int numberOfPrime = 1, int after
 
 static std::vector<int> GetPrimeBetweenTwoNumbers0(int startNumber = 2, int endNumber = 3)
 {
-	std::vector<int> array(20); 
+	std::vector<int> array(20);
 	int counter = 0;
 	for (int i = startNumber; i < endNumber; i++)
 	{
@@ -65,7 +65,7 @@ static std::vector<int> GetPrimeBetweenTwoNumbers0(int startNumber = 2, int endN
 			counter++;
 		}
 	}
-	
+
 	return array;
 }
 
@@ -124,7 +124,7 @@ static int GetNumberOfPrime(int number)
 static void DisplayPrimes(int n)
 {
 	int numberOfPrime = GetNumberOfPrime(n);
-	std::cout << numberOfPrime << " nombre" << Plural(n) << "  premier" << Plural(n) << " entre le nombre " << n << "  et " << n + 100 << " : " << PrintPrimes(GetPrimeBetweenTwoNumbers(n, n + 100)) << std::endl;
+	std::cout << numberOfPrime << " nombre" << Plural(n) << "  premier" << Plural(n) << " entre le nombre " << n << " et " << n + 100 << " : " << PrintPrimes(GetPrimeBetweenTwoNumbers(n, n + 100)) << std::endl;
 }
 
 int main()
@@ -154,7 +154,7 @@ int main()
 	ComputePrime(1900, 13);
 	ComputePrime(2000, 14);*/
 
-	for (int i = 100; i < 4000000; i = i + 100)
+	for (int i = 100; i < 10'000'000; i = i + 100)
 	{
 		DisplayPrimes(i);
 	}
