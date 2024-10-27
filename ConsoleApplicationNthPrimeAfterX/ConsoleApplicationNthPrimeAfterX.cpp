@@ -40,12 +40,9 @@ static std::vector<int> GetNPrimeAfterAnInteger(int numberOfPrime = 1, int after
 		{
 			array[counter] = afterNumber;
 			counter++;
-			afterNumber++;
 		}
-		else
-		{
-			afterNumber++;
-		}
+
+		afterNumber++;
 	} while (counter < numberOfPrime);
 
 	return array;
@@ -57,15 +54,21 @@ static std::string PrintPrimes(std::vector<int> array)
 	for (int value : array) {
 		line = line + std::to_string(value) + " ";
 	}
+
 	return line;
+}
+
+static std::string Plural(int number)
+{
+	return number > 1 ? "s" : "";
 }
 
 int main()
 {
-	std::cout << "compute N prime after X\n";
+	std::cout << "Calcul de N nombre premier après le nombre X\n";
 
 	int x = 10, n = 10;
-	std::cout << n << " nombre premier after " << x << " : " << PrintPrimes(GetNPrimeAfterAnInteger(n, x));
+	std::cout << n << " nombre" << Plural(n) << " premier" << Plural(n) << " après le nombre " << x << " : " << PrintPrimes(GetNPrimeAfterAnInteger(n, x));
 
 	return 0;
 }
